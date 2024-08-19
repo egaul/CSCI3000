@@ -14,6 +14,35 @@
 </head>
 <body>
     <h1>Cute Pug</h1>
-    <img src="https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="black and white pug pic">
+    <img id="PUG-PIC" src="https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" width="300" height="300" alt="black and white pug pic">
+
+    <p>Change Picture size to: 
+        <button id="sm-btn">Small</button>
+        <button id="med-btn">Medium</button>
+        <button id="lar-btn">Large</button>
+     </p>
+
+    <script>
+        let Smallbtn = document.getElementById("sm-btn");
+        Smallbtn.addEventListener("click", function() {
+            changeIMGsize('100px' , '100px');
+        });
+
+        let Mediumbtn = document.getElementById("med-btn");
+        Mediumbtn.addEventListener("click", function() {
+            changeIMGsize('250px' , '250px');
+        });
+
+        let Largebtn = document.getElementById("lar-btn");
+        Largebtn.addEventListener("click", function() {
+            changeIMGsize('500px' , '500px');
+        });
+
+        function changeIMGsize(newWidth , newHeight){
+            let image = document.getElementById('PUG-PIC');
+            image.style.width = newWidth;
+            image.style.height = newHeight;
+        }
+    </script>
 </body>
 </html>
